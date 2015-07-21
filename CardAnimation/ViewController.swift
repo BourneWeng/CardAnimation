@@ -68,6 +68,9 @@ class ViewController: UIViewController {
     func tapPanGesture(tap: UITapGestureRecognizer) {
         let imageView = tap.view!
         
+        //设置zPosition属性，可以让卡片翻转的时候不受后面卡片的影响
+        imageView.layer.zPosition = 200
+        
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             imageView.layer.transform = CATransform3DRotate(imageView.layer.transform, CGFloat(M_PI), 0, 1, 0)
         })
